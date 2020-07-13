@@ -11,6 +11,7 @@ class Node:
     3. Get next
     4. Set next
     """
+
     def __init__(self, value=None, next_node=None):
         # the value at this linked list node
         self.value = value
@@ -35,20 +36,21 @@ class LinkedList:
     2. A reference to the tail Node
 
     Behavior/Methods:
-    1. Add To Tail
+    1. Add To Tail (append)
     2. Prepend (Add a new node and point that Node's next_node at the old Head; update Head pointer)
     3. Remove Head
     4. Remove Tail
     5. Contains?
     6. Get Maximum?
     """
+
     def __init__(self):
         # reference to the head of the list
         self.head = None
         # reference to the tail of the list
         self.tail = None
 
-    def add_to_tail(self, value):
+    def add_to_tail(self, value): # APPEND
         # wrap the input value in a node
         new_node = Node(value, None)
         # check if there is no head (i.e., the list is empty)
@@ -83,16 +85,17 @@ class LinkedList:
         self.head = self.head.get_next()
         return value
 
+
     def remove_tail(self):
         if not self.head:
             return None
-        
+
         if self.head is self.tail:
             value = self.head.get_value()
             self.head = None
             self.tail = None
             return value
-        
+
         current = self.head
 
         while current.get_next() is not self.tail:
@@ -100,6 +103,7 @@ class LinkedList:
 
         value = self.tail.get_value()
         self.tail = current
+        self.tail.set_next(None)
         return value
 
     def contains(self, value):
