@@ -56,4 +56,13 @@ class Stack:
 
     def pop(self):
         self.stack.remove_tail()
-        
+
+
+# Difference?
+
+# A stack is a last in first out (LIFO) data structure. Currenlty all that is being
+# tested in my stack folder is pushing an item on the end, popping an item off on the end,
+# and getting the length of the storage. When using an array, all of those operations
+# are constant time. O(1). When using a linked list, getting the length of the storage is
+# linear because i will need to traverse the entire data structure to find out how
+# big it is. 
