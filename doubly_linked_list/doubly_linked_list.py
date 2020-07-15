@@ -24,6 +24,8 @@ class DoublyLinkedList:
 
     def __len__(self):
         return self.length
+    def __repr__(self):
+        return (f"length: {self.length}")
 
     """
     Wraps the given value in a ListNode and inserts it 
@@ -162,8 +164,11 @@ class DoublyLinkedList:
 
 
 
-
-
+my_node = ListNode(1)
+jackson = DoublyLinkedList(my_node)
+print(jackson)
+jackson.delete(my_node)
+print(jackson)
 
 
 

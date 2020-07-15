@@ -13,8 +13,10 @@ return elements in First In First Out order.
 Stretch: What if you could only use instances of your stack class to implement the Queue?
          What would that look like? How many stacks would you need? Try it!
 """
-from node import LinkedList
-from node import Node
+import sys
+sys.path.append('../singly_linked_list/')
+from singly_linked_list import Node
+from singly_linked_list import LinkedList
 
 # ARRAY IMPLEMENTATION
 # class Queue:
