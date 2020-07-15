@@ -11,7 +11,7 @@ Answer the following questions for each of the data structures you implemented a
 3. What is the runtime complexity of `pop` using a list?
     O(1) - worst case scenario never includes doubling the array, so its constant. 
 4. What is the runtime complexity of `pop` using a linked list?
-    O(n) - we have the tail reference to use so we can pop it, but we still need to traverse the whole list
+    O(n) - we have the tail reference to use so we can pop it, but we still need to  traverse the whole list
            to reset the pointer of the node prev to the original tail and set that prev_node_pointer to none
 5. What is the runtime complexity of `len` using a list?
     O(1) - len method for list returns a variable. thats constant time. 

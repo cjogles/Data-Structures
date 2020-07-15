@@ -38,24 +38,23 @@ from node import LinkedList
 # LINKED LIST IMPLEMENTATION
 class Stack:
     def __init__(self):
+        self.size = 0
         self.stack = LinkedList()
 
     def __len__(self):
-        current_node = self.stack.head
-        count = 0
-        if current_node == self.stack.tail or current_node == None:
-            count = 0
-            return count
-        else:
-            while current_node != self.stack.tail:
-                count += 1
-            return count
+        return self.size
 
     def push(self, value):
         self.stack.add_to_tail(value)
+        self.size += 1
 
     def pop(self):
-        self.stack.remove_tail()
+        if self.size == 0:
+            pass
+        else:
+            self.size -= 1
+            return self.stack.remove_tail()
+
 
 
 # Difference?
