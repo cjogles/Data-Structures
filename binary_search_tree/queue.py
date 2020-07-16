@@ -17,48 +17,48 @@ from node import Node
 from node import LinkedList
 
 # ARRAY IMPLEMENTATION
-# class Queue:
-#     def __init__(self):
-#         self.queue = []
+class Queue:
+    def __init__(self):
+        self.queue = []
 
-#     def __len__(self):
-#         return len(self.queue)
+    def __len__(self):
+        return len(self.queue)
 
-#     def enqueue(self, value):
-#         self.queue.append(value)
+    def enqueue(self, value):
+        self.queue.append(value)
 
-#     def dequeue(self):
-#         if self.queue.__len__() == 0:
-#             pass
-#         else:
-#             value = self.queue[0]
-#             self.queue.pop(0)
-#             return value
+    def dequeue(self):
+        if self.queue.__len__() == 0:
+            pass
+        else:
+            value = self.queue[0]
+            self.queue.pop(0)
+            return value
 
 # LINKED LIST IMPLEMENTATION
 
 
-class Queue:
-    def __init__(self):
-        self.size = 0
-        self.queue = LinkedList()
+# class Queue:
+#     def __init__(self):
+#         self.size = 0
+#         self.queue = LinkedList()
 
-    def __repr__(self):
-        return (f"queue: {self.queue}, size: {self.size}")
+#     def __repr__(self):
+#         return (f"queue: {self.queue}, size: {self.size}")
 
-    def __len__(self):
-        return self.size
+#     def __len__(self):
+#         return self.size
 
-    def enqueue(self, value):
-        self.queue.add_to_tail(value)
-        self.size += 1
+#     def enqueue(self, value):
+#         self.queue.add_to_tail(value)
+#         self.size += 1
 
-    def dequeue(self):
-        if self.size == 0:
-            pass
-        else:
-            self.size -= 1
-            return self.queue.remove_head()
+#     def dequeue(self):
+#         if self.size == 0:
+#             pass
+#         else:
+#             self.size -= 1
+#             return self.queue.remove_head()
 
 # jackson = Queue();
 # jackson.enqueue("1")

@@ -10,6 +10,7 @@ This part of the project comprises two days:
    on the BSTNode class.
 """
 
+from queue import Queue
 
 class BSTNode:
     def __init__(self, value):
@@ -106,27 +107,28 @@ class BSTNode:
         if self.right is not None:
             self.right.in_order_print(self.right)
 
-
     # Print the value of every node, starting with the given node,
     # in an iterative breadth first traversal
     def bft_print(self, node):
-        pass
         # You should import the queue class from earlier in the
         # week and use that class to implement this method
-        # Use a queue to form a "line"
-        # for the nodes to "get in"
-
+        # Use a queue to form a "line", for the nodes to "get in"
         # start by placing the root in the queue
-
-        # need a while loop to iterate
-        # what are we checking in the while statement?
         # while length of queue is greater than 0
         # dequeue item from front of queue
         # print that item
-
         # place current item's left node in queue if not None
         # place current item's right node in queue if not None
-
+        line = Queue()
+        line.enqueue(node)
+        while line.__len__() > 0:
+            my_value = line.dequeue()
+            print(my_value.value)
+            if my_value.left:
+                line.enqueue(my_value.left)
+            if my_value.right:
+                line.enqueue(my_value.right)
+            
     # Print the value of every node, starting with the given node,
     # in an iterative depth first traversal
     def dft_print(self, node):
@@ -158,5 +160,8 @@ class BSTNode:
         pass
 
 
-jackson = BSTNode(2)
-print(jackson.get_max())
+# line = Queue()
+# line.enqueue(1)
+# line.enqueue(2)
+# line.enqueue(3)
+# print(line)
