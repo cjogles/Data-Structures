@@ -17,6 +17,9 @@ class Node:
         self.value = value
         # reference to the next node in the list
         self.next_node = next_node
+    
+    def __repr__(self):
+        return (f"{self.value}")
 
     def get_value(self):
         return self.value
@@ -49,6 +52,9 @@ class LinkedList:
         self.head = None
         # reference to the tail of the list
         self.tail = None
+    
+    def __repr__(self):
+        return (f"head: {self.head} \ntail: {self.tail}" )
 
     def add_to_tail(self, value): # APPEND
         # wrap the input value in a node
