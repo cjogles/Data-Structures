@@ -11,6 +11,7 @@ This part of the project comprises two days:
 """
 
 from queue import Queue
+from stack import Stack
 
 class BSTNode:
     def __init__(self, value):
@@ -135,17 +136,24 @@ class BSTNode:
         pass
         # initialize an empty stack
         # push the root node onto the stack
-
         # need a while loop to manager our iteration
         # if stack is not empty enter the while loop
         # pop top item off the stack
         # print that item's value
-
         # if there is a right subtree
         # push right item onto the stack
-
         # if there is a left subtree
         # push left item onto the stack
+        stack = Stack()
+        stack.push(node)
+        while stack.__len__() > 0:
+            my_value = stack.pop()
+            print(my_value.value)
+            if my_value.right:
+                stack.push(my_value.right)
+            if my_value.left:
+                stack.push(my_value.left)
+
 
     # Stretch Goals -------------------------------------------------------------------------------
     # Note: Research may be required
